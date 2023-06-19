@@ -42,7 +42,7 @@ export class Heap {
       const leftIndex = 2*curr+1; 
       const rightIndex = 2*curr+2;
       const maxChildIndex = (rightIndex < this.heap.length) &&
-        (this.heap[rightIndex] < this.heap[leftIndex]) ? leftIndex : rightIndex;
+        (this.heap[rightIndex] > this.heap[leftIndex]) ? rightIndex : leftIndex;
       if(this.heap[maxChildIndex] > this.heap[curr]){
         [this.heap[maxChildIndex], this.heap[curr]] =
           [this.heap[curr], this.heap[maxChildIndex]]
