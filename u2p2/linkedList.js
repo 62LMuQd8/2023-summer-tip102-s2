@@ -68,4 +68,42 @@ export class LinkedList {
     }
     return JSON.stringify(arrayEquivalent);
   }
+
+  // https://github.com/codepath/compsci_guides/wiki/Add-Two-Numbers
+  // numbers are stored in reverse order
+  // so that two numbers can be added in this way:
+  //
+  // carry [0, 1, 1, 0, 0]
+  //       [4, 3, 2, 8, 7]
+  //     + [6, 8, 4]
+  // ----------------------
+  //       [0, 2, 7, 8, 7]
+  //
+  // explanation: 78234 + 486 = 78720
+  
+  static addTwoNumbers(ll1, ll2) {
+    let result = [];
+    let v1 = ll1.head;
+    let v2 = ll2.head;
+    let carry = 0;
+    // loop through both linked list until both lists are entirely read
+    // and carry digit is 0 (no carry digit)
+    // https://en.wikipedia.org/wiki/Carry_(arithmetic)
+    // https://en.wikipedia.org/wiki/Elementary_arithmetic
+    while (v1 !== null || v2 !== null || carry !== 0) {
+      let a = v1 !== null ? v1.data : 0;
+      let b = v2 !== null ? v2.data : 0;
+      // compute sum of a and b
+      // sum of a and b can be no more than 18 b/c (9 + 9)
+      let sum = a + b + carry;
+      // carry is the value in the tens column of the sum
+      carry = Math.floor(sum / 10);
+      // value of the current column
+      // or node is the ones column of the sum
+      result.push(sum % 10);
+      if (v1 !== null) v1 = v1.next;
+      if (v2 !== null) v2 = v2.next;
+    }
+    return new LinkedList(result);
+  }
 }
