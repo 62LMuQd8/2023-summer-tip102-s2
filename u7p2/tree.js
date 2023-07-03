@@ -29,8 +29,10 @@ export class Tree {
   }
 
   // https://www.geeksforgeeks.org/level-order-tree-traversal/
-  // note: tree must be height balanced
-  // in order to correctly print all nodes
+  // 1. lower bound --- height balanced
+  // 2. upper bound --- resembles a complete tree when traversed by code
+  //                    (null nodes act as placeholders for instantiated nodes),
+  //                    complete trees are always height balanced
   static print(tree) {
     // get root of tree
     let root = tree.root;
