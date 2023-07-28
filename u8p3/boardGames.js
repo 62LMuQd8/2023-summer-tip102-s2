@@ -15,7 +15,16 @@ export class BoardGames {
           // or back of ships, but not both to avoid double counting ships)
           //
           // let's look at one side of the ship, let's say the front,
-          // and let's say the ship is surrounded by water:
+          // and let's say the ship is surrounded by water, and let's
+          // say that the frame of reference for the
+          // the front of the ship is defined by the left border and
+          // the top border of the grid (and not by the ship ...
+          // which means that the segment of the ship that is closest
+          // to the left and top borders is the front of the ship,
+          // by definition ... alternatively, we could define that
+          // the front of the ship is with respect to the right and
+          // bottom borders of the grid, and make different observations,
+          // but the process of analysis remains the same):
           //
           // 1. when placing a 1 x k ship on the grid,
           //    the left cell of the front of the ship is always water,
