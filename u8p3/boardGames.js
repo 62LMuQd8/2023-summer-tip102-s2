@@ -8,8 +8,9 @@ export class BoardGames {
         if(grid[rowIndex][colIndex] === 'X') {
           // we can use DFS or BFS to count ships
           // however, we will make use of problem statement's constraints
-          // to simplify the code: there are no adjacent ships,
-          // and ships are either 1 x k or k x 1
+          // to simplify the code (by finding an invariant, and counting its occurrences,
+          // https://en.wikipedia.org/wiki/Invariant_(mathematics)):
+          // there are no adjacent ships, and ships are either 1 x k or k x 1
           // (this means that ships do not share borders ---
           // we can simplify the code by searching for either the front
           // or back of ships, but not both to avoid double counting ships)
