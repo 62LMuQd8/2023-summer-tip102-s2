@@ -1,6 +1,7 @@
 // code template and explanation found here:
 // https://www.geeksforgeeks.org/implementation-linkedlist-javascript/
 import { ListElement } from './listElement.js'
+// read CodePath's explanation: https://guides.codepath.org/compsci/Remove-Nth-Node-from-End-of-List
 export class LinkedList {
   constructor(initData) {
     this.head = null;
