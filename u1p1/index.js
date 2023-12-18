@@ -1,3 +1,5 @@
+// read CodePath's explanation: https://guides.codepath.org/compsci/valid-parentheses
+
 let s1 = '()';
 let s2 = '()[]{}';
 let s3 = '(]';
