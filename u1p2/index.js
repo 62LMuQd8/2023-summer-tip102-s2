@@ -6,6 +6,8 @@
 // can continually to remove max key until kth key.
 // key uniquessness can be ignored for this problem per prompt.
 
+// read CodePath's explanation: https://guides.codepath.org/compsci/kth-largest-element-in-a-stream
+
 import { KthLargest } from './kthLargest.js'
 const kthLargest = new KthLargest(3, [4, 5, 8, 2]);
 console.log(kthLargest.add(3));
