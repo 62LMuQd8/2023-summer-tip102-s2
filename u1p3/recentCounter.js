@@ -1,3 +1,4 @@
+// read CodePath's explanation: https://guides.codepath.org/compsci/number-of-recent-calls/
 export class RecentCounter {
   constructor() {
     this.counter = 0;
