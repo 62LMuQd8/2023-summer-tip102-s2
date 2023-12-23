@@ -61,7 +61,7 @@ export class ArrayService {
             //
             // now, starting from previous node, we can traverse to node c in a s shape path
             //
-            // reordering the graph, we have this diagram
+            // and rearranging the nodes and arrows on the graph, we get this
             //
             // (prev)          (head)
             //  temp ---> b ---> a ---> c ---> d
