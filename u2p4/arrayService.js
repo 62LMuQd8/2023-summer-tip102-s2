@@ -6,7 +6,7 @@ export class ArrayService {
     static removeDuplicates(nums) {
         // transform nums array into linked list
         let head = ListService.createLinkedList(nums);
-        // create temp node that points of head
+        // create temp node that points to head
         // temp node will always point to head (like a dynamic anchor)
         // (even if head changes from original linked list,
         // like when first node is removed from original linked list)
