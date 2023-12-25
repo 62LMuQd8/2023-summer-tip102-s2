@@ -16,6 +16,9 @@ export class ArrayService {
         // right pointer begins at end of array
         let r = nums.length - 1;
 
+        // the code is biased to move in the left direction of array
+        // unless it encounters a large enough value at m that acts as a floor
+
         // we move left and right pointers closer and closer to each other and stop when they meet
         // note: the reason why we choose this condition over l <= r
         // is b/c of the logical choice(s) we make in the code below
