@@ -3,7 +3,9 @@ export class StackService {
     static validateSequence(pushed, popped) {
         // test stack for push vals form pushed array
         let testStack = [];
-        // counts the number of pops from test stack
+        // represents:
+        // 1. number of pops from test stack so far
+        // 2. index of next value to pop (sequence from popped array)
         let counter = 0;
 
         for (const val of pushed) {
