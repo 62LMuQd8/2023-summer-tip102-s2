@@ -19,6 +19,13 @@ export class ArrayService {
         // the code is biased to move in the left direction of array
         // unless it encounters a large enough value at m that acts as a floor
 
+        // if the problem statement asked to find the max value,
+        // we need to keep track of whether midpoint is in the first ascending subarray or second ascending subarray
+        // in general, the big steps to keep in mind are:
+        // 1. if the midpoint is in the second ascending subarray, then the code should move to the left
+        // 2. if the midpoint is in the first ascending subarray, then the code should move to the right
+        // 3. if the array is not rotated, the max is at the end of array on the righthand side
+
         // we move left and right pointers closer and closer to each other and stop when they meet
         // note: the reason why we choose this condition over l <= r
         // is b/c of the logical choice(s) we make in the code below
