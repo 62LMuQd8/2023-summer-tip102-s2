@@ -25,6 +25,8 @@ export class ArrayService {
         // 1. if the midpoint is in the second ascending subarray, then the code should move to the left
         // 2. if the midpoint is in the first ascending subarray, then the code should move to the right
         // 3. if the array is not rotated, the max is at the end of array on the righthand side
+        // finally subarrays should be handled like the big array
+        // and we should look into more conditions (like pointers l, r, m)
 
         // we move left and right pointers closer and closer to each other and stop when they meet
         // note: the reason why we choose this condition over l <= r
