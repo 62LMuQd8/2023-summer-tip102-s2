@@ -23,6 +23,10 @@ export class ArrayService {
             // get the midpoint
             let m = Math.trunc((l + r) / 2);
 
+            // we do not check whether nums array is rotated
+            // b/c the code below collapses to the lefthand side of array
+            // which is exactly where the min value is in case nums array is not rotated
+
             // if the value at the midpoint is greater than the end of subarray
             if (nums[m] > nums[r]) {
                 // then we know all values to left of midpoint must not contain smallest value,
