@@ -1,4 +1,5 @@
 export class ArrayService {
+    // read CodePath's explanation: https://guides.codepath.org/compsci/Search-in-Rotated-Sorted-Array
     static search(nums, target) {
         // get max value of left subarray (or max value of array in case of no rotation)
         let max = findMax(nums);
