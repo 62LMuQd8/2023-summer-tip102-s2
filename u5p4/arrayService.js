@@ -9,10 +9,6 @@ export class ArrayService {
         // start recursion
         return maxArea(0, height.length - 1);
 
-        // let max = maxArea(0, height.length - 1);
-        // console.log(cache);
-        // return max;
-
         function maxArea(l, r) {
             // base case: l and r must be at least 1 unit apart
             if ((r - l) < 1) return 0;
