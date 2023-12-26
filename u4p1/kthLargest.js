@@ -1,4 +1,6 @@
 import { Heap } from './heap.js'
+
+// read CodePath's explanation: https://guides.codepath.org/compsci/Kth-Largest-Element-in-an-Array
 export class KthLargest {
   static parseKth(nums, k) {
     let removedKey;
