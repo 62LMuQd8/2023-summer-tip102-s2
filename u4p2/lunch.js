@@ -1,3 +1,4 @@
+// read CodePath's explanation: https://guides.codepath.org/compsci/Number-of-Students-Unable-to-Eat-Lunch
 export class Lunch {
     // students is queue
     // lunches is stack
