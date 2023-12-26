@@ -1,5 +1,6 @@
 // https://www.geeksforgeeks.org/binary-search-in-javascript/
 export class BinarySearch {
+    // read CodePath's explanation: https://guides.codepath.org/compsci/Binary-Search-Problem
     static findIterative(arr, target) {
       let startIndex = 0;
       let endIndex = arr.length - 1;
