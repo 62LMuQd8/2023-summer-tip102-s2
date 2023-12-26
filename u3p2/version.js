@@ -1,3 +1,4 @@
+// read CodePath's explanation: https://guides.codepath.org/compsci/First-Bad-Version
 export class Version {
     constructor(badVersion) {
       this.badVersion = badVersion;
