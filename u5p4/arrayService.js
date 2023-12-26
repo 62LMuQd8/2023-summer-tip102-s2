@@ -43,6 +43,7 @@ export class ArrayService {
     //            are (or should be) quick to implement
     //            returns answer in resonable amount of time
     // sometimes greedy algorithms are also the optimal solution (read more in ref link)
+    // but this may require mathematical proof of correctness (insight vs trying examples)
     static maxWaterIterative(height) {
         // start at subarray with max width
         // which is when l is at start of array
