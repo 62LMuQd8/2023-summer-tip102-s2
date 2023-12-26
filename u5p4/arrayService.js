@@ -44,6 +44,8 @@ export class ArrayService {
     //            returns answer in resonable amount of time
     // sometimes greedy algorithms are also the optimal solution (read more in ref link)
     // but this may require mathematical proof of correctness (insight vs trying examples)
+    // read CodePath description of greedy algorithms: https://github.com/codepath/compsci_guides/wiki/Greedy-Algorithms
+    // additional context on greedy algorithms: https://web.stanford.edu/class/archive/cs/cs161/cs161.1166/lectures/lecture14.pdf
     static maxWaterIterative(height) {
         // start at subarray with max width
         // which is when l is at start of array
