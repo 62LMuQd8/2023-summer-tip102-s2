@@ -1,4 +1,4 @@
-// 
+// read CodePath's explanation: https://guides.codepath.org/compsci/Binary-Tree-Paths
 import { Tree } from './tree.js';
 // for problem sets in u6 and u7
 // require code that converts array
