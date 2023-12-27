@@ -51,7 +51,7 @@ export class ArrayService {
     // where instead of looking at every possible combination (DP), greedy makes smart choices on
     // which subproblems to solve in order to reach a globally optimal solution
     //
-    // proving that a greedy algorithm, or designing algorithms in general, requires a background in math and science
+    // proving that a greedy algorithm, or designing an algorithm in general, requires a background in math and science
     //
     // read CodePath description of greedy algorithms: https://github.com/codepath/compsci_guides/wiki/Greedy-Algorithms
     //
@@ -69,7 +69,8 @@ export class ArrayService {
         // keep track of max area
         let max = 0;
 
-        // keep shrinking the height array in the same way until only one height remains (optimal substructure)
+        // optimal substructure property
+        // keep shrinking the height array in the same way until only one height remains
         while (l < r) {
             // get width
             let w = r - l;
@@ -77,11 +78,28 @@ export class ArrayService {
             let h = Math.min(height[l], height[r]);
             // calculate area
             // note: we start with left and right pointers as far apart as possible to maximize width
-            //       max area = max height * max width (greedy choice property)
+            //
+            //       we can start at any width, but then we would need a different algorithm that starts
+            //       at a custom width to maximize the initial area
+            //
+            //       for any pair of heights, we want to maximize the width in order to maximize the area,
+            //       so why not start with max width and then figure out how to maximize the heights while
+            //       minimizing the change in width?
+            //
+            //       to say this in another way:
+            //
+            //       max area = max height * max width
+            //
+            //       option 1: we know the width, we have an initial area to maximize, we need to optimize height
+            //
+            //       option 2: we know the height, we have an initial area to maximize, we need to optimize width
+            //
+            //       both options should reach the same global optimal solution, but which option seems faster to design?
             let area = w * h;
             // update max area tracker
             max = Math.max(max, area);
 
+            // greedy choice property
             // if height at l is less than height at r
             if (height[l] < height[r]) {
                 // we move left pointer over 1 unit, for the following reasons:
@@ -98,7 +116,7 @@ export class ArrayService {
                 //
                 //    b) when do we decide to move the pointer on the side that has the lower height?
                 //
-                //    c) to be more clear, let's go through a few of cases of what can happen
+                //    c) to answer these questions, let's go through a few cases of what can happen
                 //       when we just move the pointer on the side that has the higher height:
                 //
                 //    d) if we encounter a height that is less than the higher height,
@@ -129,10 +147,24 @@ export class ArrayService {
                 //       on the side that has the lower height to where the pointer is in f),
                 //       so that we can utilize the full height of the higher height (from initial position)
                 //
-                //    k) from these examples, we see that we are better off moving the pointer
-                //       on the side that has the lower height in order to maximize the heights
+                //    k) from these examples, we can answer questions b) and c): we are better off moving
+                //       the pointer on the side that has the lower height in order to maximize the heights
                 //       used in area calculation (width constantly decreases no matter what,
-                //       so that's be smart which pointer we choose to move to maximize height and area)
+                //       so let's be smart about which pointer we choose to move to maximize height
+                //       and consequently area)
+                //
+                //    l) and these examples show:
+                //
+                //       i) greedy choice property - the problem can be solved by choosing the choice
+                //          that looks the best at the moment, i.e. moving the pointer on the side
+                //          that has the lower height in order to maximize area for the whole array
+                //
+                //      ii) optimal substructure property - the optimal solution to the problem
+                //          contains or is derived from the optimal solutions to the subproblems,
+                //          i.e. after moving the pointer, we continue to move the pointer on the side
+                //          that has the lower height in order to maximize area for the subarray (subproblem)
+                //
+                //    m) these two properties are what make this algorithm greedy
                 //
                 // 4. note: in this example height = [3,2,10,5]
                 //
@@ -142,7 +174,7 @@ export class ArrayService {
                 //          and we get the area between intervals 2 and 5, which is 4 units^2
                 //
                 //          however, if we had moved the right pointer first (from 5 to 10),
-                //          then we would have gotten the area between intervals 3 and 10 is 6 units^2
+                //          then we would have gotten the area between intervals 3 and 10, which is 6 units^2
                 //
                 //          the goal of the algorithm is to find the max area between 2 heights and x-axis
                 //
@@ -150,7 +182,7 @@ export class ArrayService {
                 //          a larger area but less than the max area if we would have decided differently
                 //          (not greedily), then the area is not a must have for optimal solution
                 //          (remember that we are looking for max area over the whole array,
-                //          and not the max area for each subarray)
+                //          and not the max area for each subarray of the same width)
                 l++;
                 continue;
             }
