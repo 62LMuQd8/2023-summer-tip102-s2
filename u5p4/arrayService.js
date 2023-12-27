@@ -44,7 +44,7 @@ export class ArrayService {
 
     // greedy algorithms: https://en.wikipedia.org/wiki/Greedy_algorithm
     //
-    // typically greedy algorithms are meant for computing approximations, quick to implement,
+    // typically greedy algorithms are meant for computing approximations, are quick to implement,
     // and returns answer in a reasonable amount of time
     //
     // correct greedy algorithms are optimal solutions, and an optimization over dynamic programming,
