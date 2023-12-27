@@ -205,7 +205,7 @@ export class ArrayService {
                 // 2. and if we the next height is less than the current height, the next area
                 //    will be smaller than the current area because area is bounded by a smaller width
                 //    and lower height
-                // so we are better of moving both left and right pointers in by 1 unit
+                // so we are better off moving both left and right pointers in by 1 unit
                 l++;
                 r--;
                 continue;
