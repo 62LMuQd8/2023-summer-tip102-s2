@@ -5,6 +5,7 @@ export class ArrayService {
     // exact solution for each subarray (see cache)
     // note: without caching, time complexity is O(n^3),
     //       with caching, time complexity is O(n^2)
+    //       (pair each height with every other height)
     //       can we do better?
     static maxWaterRecursion(height) {
         // storing results of overlapping subproblems
