@@ -53,7 +53,7 @@ export class ArrayService {
     //
     // proving that a greedy algorithm, or designing an algorithm in general, requires a background in math and science
     //
-    // read CodePath description of greedy algorithms: https://github.com/codepath/compsci_guides/wiki/Greedy-Algorithms
+    // read CodePath description on greedy algorithms: https://github.com/codepath/compsci_guides/wiki/Greedy-Algorithms
     //
     // additional context on greedy algorithms: https://web.stanford.edu/class/archive/cs/cs161/cs161.1166/lectures/lecture14.pdf
     //
