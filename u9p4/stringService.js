@@ -19,7 +19,7 @@ export class StringService {
             // keep track of decoded string
             let decodedString = [];
 
-            // if previous character is not an opening square bracket, then keep backtrack
+            // if previous character is not an opening square bracket, then keep backtracking
             // we are retrieving the repeatable substring within the square backets
             while (stack[stack.length - 1] !== '[') {
                 // pop character from stack and push to decodedString
