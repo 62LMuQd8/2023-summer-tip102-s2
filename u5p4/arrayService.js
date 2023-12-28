@@ -114,7 +114,7 @@ export class ArrayService {
                 //
                 // 1. width must decrease by 1 unit (at minimum) on either side
                 //
-                // 2. area is limited by the lower height at l or r
+                // 2. area is bounded by the lower height at l or r
                 //
                 // 3. if we move the pointer on the side that has the higher height:
                 //
