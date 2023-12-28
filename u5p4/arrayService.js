@@ -80,7 +80,7 @@ export class ArrayService {
             // note: we start with left and right pointers as far apart as possible to maximize width
             //
             //       we can start at any width, but then we would need a different algorithm that starts
-            //       at a custom width to maximize the initial area
+            //       at custom width to maximize the initial area
             //
             //       for any pair of heights, we want to maximize the width in order to maximize the area,
             //       so why not start with max width and then figure out how to maximize the heights while
