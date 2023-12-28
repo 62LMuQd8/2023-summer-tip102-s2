@@ -9,7 +9,8 @@ export class StringService {
 
         for (const c of s) {
             // if we do not see a closing square bracket
-            // then keep reading each character
+            // then keep reading each character from left to right
+            // i.e., if the string is '3[ab]' then the first character is 3
             if (c !== ']') {
                 stack.push(c);
                 continue;
