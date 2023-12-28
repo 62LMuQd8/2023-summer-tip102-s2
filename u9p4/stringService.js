@@ -24,13 +24,6 @@ export class StringService {
             while (stack[stack.length - 1] !== '[') {
                 // pop character from stack and push to decodedString
                 // and remember to push the expanded string back in the correct order
-
-
-                // this is because when we push the expanded string
-                // back to the stack, the characters will be pushed in the correct order:
-                // first character of the expanded string is pushed first,
-                // last character of the expanded string is pushed last
-                // we will use join() to convert array to string later
                 decodedString.push(stack.pop());
             }
 
