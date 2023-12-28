@@ -90,11 +90,13 @@ export class ArrayService {
             //
             //       max area = max height * max width
             //
-            //       option 1: we know the width, we have an initial area to maximize, we need to optimize height
+            //       option 1: we know the width (max width for example), we have an initial area to maximize, we need to optimize height
             //
-            //       option 2: we know the height, we have an initial area to maximize, we need to optimize width
+            //       option 2: we know the height (max height for example), we have an initial area to maximize, we need to optimize width
             //
-            //       both options should reach the same global optimal solution, but which option seems faster to design?
+            //       option 3: combination of option 1 and 2 where we start neither at max width or height
+            //
+            //       all options should reach the same global optimal solution, but which option seems faster to design?
             let area = w * h;
             // update max area tracker
             max = Math.max(max, area);
