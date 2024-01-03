@@ -100,6 +100,10 @@ export class ArrayService {
             //       in this function does not belong to a class, we can informally assume that
             //       any two or more implementations have different sets of qualities)
             //
+            //       in other words, starting with criteria that does not include max width does
+            //       not guarantee that the alternative way of solving this problem is at least
+            //       as efficient as the way of solving this problem that includes max width
+            //
             //       for any pair of heights, we want to maximize the width in order to maximize the area,
             //       so we start with max width and then figure out how to maximize the heights while
             //       minimizing the change in width with a greedy implementation
