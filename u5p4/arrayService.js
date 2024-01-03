@@ -82,12 +82,13 @@ export class ArrayService {
             //       why do we start at max width?
             //
             //       we can start at any width (part of analysis, not part of problem statement)
-            //       but then we may need to restart algorithm from scratch and redesign into
-            //       nongreedy algorithm
+            //       but then we may need to restart algorithm from scratch and redesign into a
+            //       nongreedy algorithm (or modify current implmentation to a different greedy
+            //       implementation)
             //
             //       for any pair of heights, we want to maximize the width in order to maximize the area,
             //       so we start with max width and then figure out how to maximize the heights while
-            //       minimizing the change in width
+            //       minimizing the change in width with a greedy implementation
             //
             //       to say this in another way:
             //
