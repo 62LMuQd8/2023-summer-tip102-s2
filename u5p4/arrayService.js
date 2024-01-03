@@ -86,6 +86,20 @@ export class ArrayService {
             //       nongreedy algorithm (or modify current implmentation to a different greedy
             //       implementation)
             //
+            //       starting at any width (or any criterion that is not max width) may lead to
+            //       an alternative way of solving this problem; however, the alternative way of
+            //       solving this problem (compare to greedy implementation described in this function)
+            //       may not have the same qualities as the implementation described in this function
+            //       (the implementation described in this function belongs to a class of algorithms
+            //       that quickly and efficiently solves certain types of problems, and therefore,
+            //       the implementation described in this function is a quick and efficient solution
+            //       to this problem; an alternative implementation may not belong to the same
+            //       class as the implementation described in this function, so therefore, there are
+            //       no guarantees to whether the alternative way of solving this problem is a quick
+            //       and efficient solution; and in general, even if the implementation described
+            //       in this function does not belong to a class, we can informally assume that
+            //       any two or more implementations have different sets of qualities)
+            //
             //       for any pair of heights, we want to maximize the width in order to maximize the area,
             //       so we start with max width and then figure out how to maximize the heights while
             //       minimizing the change in width with a greedy implementation
