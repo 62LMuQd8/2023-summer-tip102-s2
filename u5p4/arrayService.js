@@ -79,12 +79,15 @@ export class ArrayService {
             // calculate area
             // note: we start with left and right pointers as far apart as possible to maximize width
             //
-            //       we can start at any width, but then we would need a different algorithm that starts
-            //       at custom width to maximize the initial area
+            //       why do we start at max width?
+            //
+            //       we can start at any width (part of analysis, not part of problem statement)
+            //       but then we may need to restart algorithm from scratch and redesign into
+            //       nongreedy algorithm
             //
             //       for any pair of heights, we want to maximize the width in order to maximize the area,
-            //       so why not start with max width and then figure out how to maximize the heights while
-            //       minimizing the change in width?
+            //       so we start with max width and then figure out how to maximize the heights while
+            //       minimizing the change in width
             //
             //       to say this in another way:
             //
@@ -101,7 +104,69 @@ export class ArrayService {
             //       option 3: any combination of option 1 and 2
             //                 where we start neither at max width or max height
             //
-            //       all options should reach the same max area, but which option seems faster to design?
+            //       all options should reach the same max area,
+            //       but which option better fits a greedy algorithm?
+            //
+            //       1. the max element of a collection is the element that is greater than or equal to
+            //          any other element in the collection
+            //
+            //       2. then by definition, there can be only one solution to this problem
+            //
+            //       3. from dynamic programming (brute force) we know that the max area of the collection
+            //          of areas formed by pairing every height with every other height is one area and
+            //          is the solution to this problem
+            //
+            //       4. so to verify the correctness of each option, we can compare the solution
+            //          of the algorithm with the solution from dynamic programming
+            //
+            //       5. for option 2, knowing the pair of highest heights of the whole interval
+            //          is like removing the heights between the pair of highest heights
+            //          (b/c areas formed between the pair of highest heights are bounded
+            //          by the highest heights and smaller widths, so these areas can never be an area
+            //          greater than the area formed by the pair of highest heights at the ends of the
+            //          subarray)
+            //
+            //       6. if we ignore the heights between the pair of highest heights,
+            //          we are left with more or less the same problem from the start:
+            //          what is the max area bounded by two heights and the x-axis?
+            //
+            //       7. from here, the max area can be found:
+            //          a) either entirely to the left of the left highest height
+            //          b) or entirely to the right of the right highest height
+            //          c) or the max area encloses the positions of the pair of highest heights
+            //
+            //       8. we can try to continue to find a working algorithm from here (option 2),
+            //          or we can go back and look at other options to solve this problem
+            //          since we appear to be stuck (heights of the max area can be found
+            //          in either one or two subarrays, so we must look in both subarrays;
+            //          from where we are now, it looks like dynamic programming can be used
+            //          to solve this subproblem, but maybe there is a way to reduce the number
+            //          of height combinations; let us backtrack for now, and see if other
+            //          options are more profitable)
+            //
+            //       9. option 3 is similar to option 2: instead of removing heights between
+            //          the pair of highest heights, we start at a custom width and look at
+            //          the heights before the left highest height, the heights after the right
+            //          highest heights, the heights between the left and right highest heights
+            //          (since widths are custom selected at the start of the problem,
+            //          it is possible that we start with two lowest heights for example,
+            //          and so, we would need to look at the heights between the two starting heights),
+            //          and the heights in both left and right subarrays formed by the initial heights
+            //
+            //      10. dynamic programming can be used here to find the max area,
+            //          but maybe there is a way to reduce the number of height combinations;
+            //          let us backtrack for now, and see if other options are more profitable
+            //
+            //      11. with option 1, when we start the problem at max width:
+            //          a) the only way to increase the area is to decrease the width
+            //          b) to improve the area optimization,
+            //             i) maximize the heights on either side
+            //            ii) minimize the change in width
+            //
+            //      12. based on these observations, we may be able to transform the problem into
+            //          chained subproblems (each subproblem is a subarray from the previous subproblem)
+            //          through greedy selection, and this would greatly improve the time complexity
+            //          (compare to dynamic programming)
             let area = w * h;
             // update max area tracker
             max = Math.max(max, area);
