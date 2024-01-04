@@ -28,8 +28,8 @@ export class ArrayService {
         let numberOfPasses = 0;
         let directionDeltas = [[-1,0], [0,1], [1,0], [0,-1]];
 
-        // add a timer tick to start the counting
-        // this extra timer tick is needed even if
+        // add a marker to denote the end of one pass through the grid
+        // this marker at the beginning is needed even if
         // there are no fresh oranges initially on the grid
         // see above for reason why this is the case
         queue.push([]);
@@ -41,12 +41,12 @@ export class ArrayService {
 
             // if location is of length zero
             // we know that this is a special location
-            // that marks the end of a timer tick
+            // that marks the end of one pass through the grid
             if (locationRO.length === 0) {
                 // then add one pass to the total passes
                 numberOfPasses++;
-                // if there are more rotting oranges to check
-                // then add a timer tick to the queue
+                // if there are more rotting oranges to check at the end of the current pass
+                // then add a marker to the queue to denote where in the queue is the end of the next pass
                 if (queue.length !== 0) queue.push([]);
             } else {
                 // for each direction
